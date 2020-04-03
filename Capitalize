@@ -1,0 +1,22 @@
+using System;
+
+namespace ConsoleApp2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string[] s = new string[2] { "AbCdEf", "aBcDeF" };
+            Capitalize(s[2]);
+        }
+        public static string[] Capitalize(string s)
+        {
+            s.ToString().ToLower();
+            s.Clone();
+            return s;
+            throw new NotImplementedException();
+            
+        }
+    }
+}
+
