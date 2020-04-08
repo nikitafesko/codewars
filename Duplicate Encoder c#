@@ -1,0 +1,34 @@
+using System;
+using System.Linq;
+using System.Collections.Generic;
+namespace proj1
+{
+    internal class Program
+    {
+        public static void Main(string[] args)
+        {
+            string word = "qwertyu";
+            string word2 = "qqwweerr";
+            Console.WriteLine(DuplicateEncode(word));
+        }
+        public static string DuplicateEncode(string str)
+        {
+            var word = str.ToLower();
+            var result = "";
+            for (int i = 0; i < word.Length; i++)
+            {
+                
+                if (word.LastIndexOf(word[i]) == word.IndexOf(word[i]))
+                {
+                    result += '(';
+                }
+                else
+                {
+                    result += ")";
+                }
+            }
+            
+            return result;
+        }
+    }
+}
