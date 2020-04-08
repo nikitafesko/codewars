@@ -1,0 +1,22 @@
+using System;
+using System.Linq;
+using System.Text;
+namespace Extensions
+{
+  public static class StringExt
+  {
+      public static string ToAlternatingCase(this string s)
+        {
+            StringBuilder sb = new StringBuilder(s);
+            for (int i = 0; i < sb.Length; i++)
+            {
+                if (char.IsLower(sb[i]))
+                    sb[i] = char.ToUpper(sb[i]);
+                else
+                    sb[i] = char.ToLower(sb[i]);
+            }
+            return sb.ToString();
+        }
+    }
+  }
+}
