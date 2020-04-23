@@ -1,0 +1,22 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace ConsoleApplication1
+{
+    class Program
+    {
+        public static void Main(string[] args)
+        {
+            Dictionary<string, int> a = new Dictionary<string, int> {{"Java", 10}, {"Ruby", 80}, {"Python", 65}};
+            Console.WriteLine(MyLanguages(a));
+                
+        }
+
+
+        public static IEnumerable<string> MyLanguages(Dictionary<string, int> results)
+        {
+            return results.Where(x => x.Value > 59).OrderBy(x => -x.Value).Select(x => x.Key);
+        }
+    }
+}
